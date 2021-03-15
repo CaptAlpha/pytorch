@@ -64,7 +64,7 @@ void check_foreach_api_restrictions(TensorList tensors1, TensorList tensors2, Te
 // - All tensors must be non-overlapping and dense
 // - Resulting tensor must have the same dtype as the input one
 
-bool will_promote_tensor(const Tensor& tensor, Scalar scalar) {
+bool will_promote_tensor(const Tensor& tensor, const Scalar& scalar) {
   auto result_dtype = at::result_type(tensor, scalar);
   return result_dtype != tensor.scalar_type();
 }
